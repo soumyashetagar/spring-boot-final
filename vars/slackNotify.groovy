@@ -34,5 +34,4 @@ def call(String buildStatus = 'STARTED') {
       body: "details",
       recipientProviders: [[$class: 'DevelopersRecipientProvider']]
      //recipientProviders: [[$class: 'RequesterRecipientProvider']]
-    )
 }
