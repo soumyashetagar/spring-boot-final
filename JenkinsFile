@@ -26,7 +26,7 @@ pipeline {
 	stage ('Test Environment')
 	{
 		steps{
-		sh 'ssh -t -t -i /home/ec2-user/.ssh/id_rsa ansadmin@172.31.10.200 "ansible-playbook /opt/playbooks/down_test.yml"'
+		sh 'ssh -t -t -i /var/lib/jenkins/.ssh/id_rsa ansadmin@172.31.10.200 "ansible-playbook /opt/playbooks/down_test.yml"'
 		}
 	}
 		
