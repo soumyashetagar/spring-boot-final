@@ -27,11 +27,11 @@ def call(String buildStatus = 'STARTED') {
   }
   // Send notifications
  slackSend (color: colorCode, message: summary)
-  emailext(
-      to: mailRecipients,
-      replyTo: mailRecipients,
-      subject: subject,
-      body: details,
+  emailext
+      to: "mailRecipients",
+      replyTo: "mailRecipients",
+      subject: "subject",
+      body: "details",
       recipientProviders: [[$class: 'DevelopersRecipientProvider']]
      //recipientProviders: [[$class: 'RequesterRecipientProvider']]
     )
