@@ -29,5 +29,4 @@ def call(String buildStatus = 'STARTED') {
  slackSend (color: colorCode, message: summary)
   emailext to: "maheshwar.mannur@gmail.com", subject: subject, body: details, recipientProviders: [[$class: 'DevelopersRecipientProvider']]
      //recipientProviders: [[$class: 'RequesterRecipientProvider']]
-)
 }
