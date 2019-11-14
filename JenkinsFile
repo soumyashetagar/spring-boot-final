@@ -11,8 +11,13 @@ pipeline {
 	    	slackNotify 'Building Started'
                 build 'BUILD'
             }
+	    post{
+	    	failure{
+			jira()
+		}
+	    }
         }
-	
+	/*
         stage('SonarQube Analysis'){
             steps{
                sonar()
@@ -55,6 +60,6 @@ pipeline {
 		steps{
 			prodEnv()
 		}
-	}		
+	}*/		
       }
 	}
