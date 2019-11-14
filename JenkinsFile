@@ -34,7 +34,7 @@ pipeline {
 	{
 		steps
 		{
-			performance
+			performance()
 		}
 	}
 	stage ('Performance Environment')
