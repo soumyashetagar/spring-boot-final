@@ -1,5 +1,4 @@
-def call(String msg='PRODUCTION ENVIRONMENT')
+def call(body)
 {
-  echo "${msg}"
   sh 'ssh -t -t -i /var/lib/jenkins/.ssh/id_rsa ansadmin@172.31.10.200 "ansible-playbook /opt/playbooks/down_prod.yml"'
 }
