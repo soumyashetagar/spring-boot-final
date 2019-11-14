@@ -1,7 +1,8 @@
 def call(String msg="APPROVAL")
 {
   echo "${msg}"
-  script {
+  script
+  {
       
         emailext mimeType: 'text/html',
                  subject: "[Jenkins]${currentBuild.fullDisplayName}",
@@ -20,7 +21,5 @@ def call(String msg="APPROVAL")
         echo ("Target: "+userInput['target'])
         echo ("submitted by: "+userInput['submitter'])
          
-        }
-         }
-         }
+     }
 }
