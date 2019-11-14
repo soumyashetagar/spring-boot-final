@@ -9,13 +9,13 @@ pipeline {
         stage('Compile-Build-Test ') {
             steps {
 	    	slackNotify 'Building Started'
-                build 'BUILD'
+                build()
             }
         }
 	
         stage('SonarQube Analysis'){
             steps{
-               sonar 'SONAR'
+               sonar()
             }
         }
 	stage('Security Scan'){
@@ -25,15 +25,15 @@ pipeline {
 	}
 	     stage('Nexus') {
     		 steps{
-          		nexus 'NEXUS' 
+          		nexus() 
        			}
 		   }
 		   
 	stage ('Test Environment')
 	{
 		steps{
-			testEnv 'TESTING'
-			approval 'TESTING STAGE'
+			testEnv()
+			approval()
 		}
 	}
 	stage('Performance Testing')
@@ -46,14 +46,14 @@ pipeline {
 	stage ('Performance Environment')
 	{
 		steps{
-			perfEnv 'PERFORMANCE'
-			approval 'PERFORMANCE STAGE'
+			perfEnv()
+			approval()
 		}
 	}
 	stage ('Production Environment')
 	{
 		steps{
-			prodEnv 'PRODUCTION'
+			prodEnv()
 		}
 	}		
       }
