@@ -32,7 +32,15 @@ pipeline {
 	 steps{
 		nexus() 
 		}
-	   }
+	}
+	
+	stage ('Dev Environment')
+	{
+		steps{
+			devEnv()
+		}
+	
+	}
 		   
 	stage ('Test Environment')
 	{
