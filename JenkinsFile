@@ -60,6 +60,17 @@ pipeline {
 	    }
 	
 	}
+	
+	stage('Functional Testing'){
+		steps{
+			
+		}
+		post{
+	    	failure{
+			jira 'SECURITY SCAN STAGE FAILED','FRI-6'
+		}
+	    }
+	}
 		   
 	stage ('Test Environment')
 	{
@@ -69,7 +80,7 @@ pipeline {
 		}
 		post{
 	    	failure{
-			jira 'TEST DEPLOY STAGE FAILED','FRI-6'
+			jira 'TEST DEPLOY STAGE FAILED','FRI-7'
 		}
 	    }
 	}
@@ -81,7 +92,7 @@ pipeline {
 		}
 		post{
 	    	failure{
-			jira 'PERFORMANCE TESTING DEPLOY STAGE FAILED','FRI-7'
+			jira 'PERFORMANCE TESTING DEPLOY STAGE FAILED','FRI-8'
 		}
 	    }
 	}
@@ -93,7 +104,7 @@ pipeline {
 		}
 		post{
 	    	failure{
-			jira 'PERFORMANCE DEPLOY STAGE FAILED','FRI-8'
+			jira 'PERFORMANCE DEPLOY STAGE FAILED','FRI-9'
 		}
 	    }
 	}
@@ -104,7 +115,7 @@ pipeline {
 		}
 		post{
 	    	failure{
-			jira 'PRODUCTION DEPLOY STAGE FAILED','FRI-9'
+			jira 'PRODUCTION DEPLOY STAGE FAILED','FRI-10'
 		}
 	    }
 	}		
