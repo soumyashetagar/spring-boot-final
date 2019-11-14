@@ -13,7 +13,7 @@ pipeline {
             }
 	    post{
 	    	failure{
-			jira 'BUILD STAGE FAILED','JAR-1'
+			jira 'BUILD STAGE FAILED','FRI-1'
 		}
 	    }
         }
@@ -23,7 +23,7 @@ pipeline {
             }
 	    post{
 	    	failure{
-			jira 'SONAR STAGE FAILED','JAR-2'
+			jira 'SONAR STAGE FAILED','FRI-2'
 		}
 	    }
         }
@@ -33,7 +33,7 @@ pipeline {
 		}
 		post{
 	    	failure{
-			jira 'SECURITY SCAN STAGE FAILED','JAR-3'
+			jira 'SECURITY SCAN STAGE FAILED','FRI-3'
 		}
 	    }
 	}
@@ -43,7 +43,7 @@ pipeline {
 		}
 		post{
 	    	failure{
-			jira 'NEXUS STAGE FAILED','JAR-4'
+			jira 'NEXUS STAGE FAILED','FRI-4'
 		}
 	    }
 	}
@@ -55,7 +55,7 @@ pipeline {
 		}
 		post{
 	    	failure{
-			jira 'DEV DEPLOY STAGE FAILED','JAR-5'
+			jira 'DEV DEPLOY STAGE FAILED','FRI-5'
 		}
 	    }
 	
@@ -69,7 +69,7 @@ pipeline {
 		}
 		post{
 	    	failure{
-			jira 'TEST DEPLOY STAGE FAILED','JAR-6'
+			jira 'TEST DEPLOY STAGE FAILED','FRI-6'
 		}
 	    }
 	}
@@ -81,7 +81,7 @@ pipeline {
 		}
 		post{
 	    	failure{
-			jira 'PERFORMANCE TESTING DEPLOY STAGE FAILED','JAR-7'
+			jira 'PERFORMANCE TESTING DEPLOY STAGE FAILED','FRI-7'
 		}
 	    }
 	}
@@ -93,7 +93,7 @@ pipeline {
 		}
 		post{
 	    	failure{
-			jira 'PERFORMANCE DEPLOY STAGE FAILED','JAR-8'
+			jira 'PERFORMANCE DEPLOY STAGE FAILED','FRI-8'
 		}
 	    }
 	}
@@ -104,7 +104,7 @@ pipeline {
 		}
 		post{
 	    	failure{
-			jira 'PRODUCTION DEPLOY STAGE FAILED','JAR-9'
+			jira 'PRODUCTION DEPLOY STAGE FAILED','FRI-9'
 		}
 	    }
 	}		
