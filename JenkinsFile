@@ -5,6 +5,7 @@ pipeline {
         maven "Maven"   
     }   
   
+    /*
     stages {
         stage('Compile-Build-Test ') {
             steps {
@@ -75,7 +76,7 @@ pipeline {
 	    }
 	
 	}
-	
+	*/
 	stage('Functional Testing'){
 		steps{
 			funcTest()
@@ -89,7 +90,7 @@ pipeline {
 		}
 	    }
 	}
-		   
+	/*	   
 	stage ('Test Environment')
 	{
 		steps{
@@ -148,6 +149,7 @@ pipeline {
 			jira 'PRODUCTION DEPLOY STAGE FAILED','FRI-10'
 		}
 	    }
-	}		
+	}
+	*/
       }
 	}
