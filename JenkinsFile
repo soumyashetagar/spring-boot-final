@@ -5,8 +5,8 @@ pipeline {
         maven "Maven"   
     }   
   
-    /*
     stages {
+    	/*
         stage('Compile-Build-Test ') {
             steps {
 	    	slackNotify 'Building Started'
@@ -142,14 +142,14 @@ pipeline {
 			prodEnv()
 		}
 		post{
-		success{
-			slackNotify 'Production Deploy SUCCESS'
-		}
-	    	failure{
-			jira 'PRODUCTION DEPLOY STAGE FAILED','FRI-10'
-		}
-	    }
+			success{
+				slackNotify 'Production Deploy SUCCESS'
+			}
+	    		failure{
+				jira 'PRODUCTION DEPLOY STAGE FAILED','FRI-10'
+			}
+	    	}
 	}
 	*/
       }
-	}
+}
