@@ -33,14 +33,14 @@ pipeline {
 	stage ('Performance Environment')
 	{
 		steps{
-			perf-env 'PERFORMANCE'
+			perfEnv 'PERFORMANCE'
 			approval 'PERFORMANCE STAGE'
 		}
 	}
 	stage ('Production Environment')
 	{
 		steps{
-			prod-env 'PRODUCTION'
+			prodEnv 'PRODUCTION'
 		}
 	}		
       }
