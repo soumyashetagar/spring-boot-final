@@ -9,4 +9,4 @@ scenarios:
     requests:
     - label: blazedemo
       method: GET
-      url:https://www.espncricinfo.com/
+      url:http://13.233.153.114:8091/myWebApp_Test-1/
