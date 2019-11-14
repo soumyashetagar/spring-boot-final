@@ -1,4 +1,4 @@
-def call(String msg="STAGE FAILED",String id="JAR-0")
+def call(String msg="STAGE FAILED",String id="FRI-0")
 {
   jiraAddComment comment: msg, idOrKey:id , site: 'jira'
   /*def testIssue = [fields: [ project: [id: 'JAR'],
