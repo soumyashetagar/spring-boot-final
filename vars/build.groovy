@@ -1,3 +1,3 @@
-def call(String msg = "BUILD"){
+def call(body){
    sh 'mvn clean package'
 }
