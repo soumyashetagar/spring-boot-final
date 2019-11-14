@@ -9,7 +9,7 @@ pipeline {
         stage('Compile-Build-Test ') {
             steps {
 	    	slackNotify 'Building Started'
-                build()
+                build 'BUILD'
             }
         }
 	
