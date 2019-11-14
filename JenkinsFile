@@ -13,7 +13,7 @@ pipeline {
             }
 	    post{
 	    	failure{
-			jira()
+			jira('BUILD STAGE FAILED','JAR-1')
 		}
 	    }
         }
