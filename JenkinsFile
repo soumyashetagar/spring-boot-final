@@ -13,25 +13,39 @@ pipeline {
             }
 	    post{
 	    	failure{
-			jira 'BUILD STAGE FAILED','JAR-5'
+			jira 'BUILD STAGE FAILED','JAR-1'
 		}
 	    }
         }
-	/*
         stage('SonarQube Analysis'){
             steps{
                sonar()
             }
+	    post{
+	    	failure{
+			jira 'SONAR STAGE FAILED','JAR-2'
+		}
+	    }
         }
 	stage('Security Scan'){
 		steps{
 			securityScan()
 		}
+		post{
+	    	failure{
+			jira 'SECURITY SCAN STAGE FAILED','JAR-3'
+		}
+	    }
 	}
 	stage('Nexus') {
 	 steps{
 		nexus() 
 		}
+		post{
+	    	failure{
+			jira 'NEXUS STAGE FAILED','JAR-4'
+		}
+	    }
 	}
 	
 	stage ('Dev Environment')
@@ -39,6 +53,11 @@ pipeline {
 		steps{
 			devEnv()
 		}
+		post{
+	    	failure{
+			jira 'DEV DEPLOY STAGE FAILED','JAR-5'
+		}
+	    }
 	
 	}
 		   
@@ -48,6 +67,11 @@ pipeline {
 			testEnv()
 			approval()
 		}
+		post{
+	    	failure{
+			jira 'TEST DEPLOY STAGE FAILED','JAR-6'
+		}
+	    }
 	}
 	stage('Performance Testing')
 	{
@@ -55,6 +79,11 @@ pipeline {
 		{
 			performance()
 		}
+		post{
+	    	failure{
+			jira 'PERFORMANCE TESTING DEPLOY STAGE FAILED','JAR-7'
+		}
+	    }
 	}
 	stage ('Performance Environment')
 	{
@@ -62,12 +91,22 @@ pipeline {
 			perfEnv()
 			approval()
 		}
+		post{
+	    	failure{
+			jira 'PERFORMANCE DEPLOY STAGE FAILED','JAR-8'
+		}
+	    }
 	}
 	stage ('Production Environment')
 	{
 		steps{
 			prodEnv()
 		}
-	}*/		
+		post{
+	    	failure{
+			jira 'PRODUCTION DEPLOY STAGE FAILED','JAR-9'
+		}
+	    }
+	}		
       }
 	}
