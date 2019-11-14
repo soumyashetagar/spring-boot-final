@@ -78,7 +78,7 @@ pipeline {
 	
 	stage('Functional Testing'){
 		steps{
-			echo "Hello"
+			funcTest()
 		}
 		post{
 		success{
