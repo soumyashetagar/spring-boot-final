@@ -9,56 +9,56 @@ pipeline {
     	/*
         stage('Compile-Build-Test ') {
             steps {
-	    	slackNotify 'Building Started'
+	    	//slackNotify 'Building Started'
                 build 'BUILD'
             }
-	    post{
-	    	success{
-			slackNotify 'Building SUCCESS'
-		}
-	    	failure{
-			jira 'BUILD STAGE FAILED','FRI-1'
-		}
-	    }
+	   // post{
+	    	//success{
+			//slackNotify 'Building SUCCESS'
+		//}
+	    	//failure{
+			//jira 'BUILD STAGE FAILED','FRI-1'
+		//}
+	   // }
         }
         stage('SonarQube Analysis'){
             steps{
                sonar()
             }
-	    post{
-	    	success{
-			slackNotify 'Sonar SUCCESS'
-		}
-	    	failure{
-			jira 'SONAR STAGE FAILED','FRI-2'
-		}
-	    }
+	   // post{
+	    	//success{
+			//slackNotify 'Sonar SUCCESS'
+		//}
+	    	//failure{
+			//jira 'SONAR STAGE FAILED','FRI-2'
+		//}
+	   // }
         }
-	stage('Security Scan'){
+	/*stage('Security Scan'){
 		steps{
 			securityScan()
 		}
-		post{
-		success{
-			slackNotify 'Security Scan SUCCESS'
-		}
-	    	failure{
-			jira 'SECURITY SCAN STAGE FAILED','FRI-3'
-		}
+		//post{
+		//success{
+			//slackNotify 'Security Scan SUCCESS'
+		//}
+	    	//failure{
+			//jira 'SECURITY SCAN STAGE FAILED','FRI-3'
+		//}
 	    }
-	}
+	}*/
 	stage('Nexus') {
 	 steps{
 		nexus() 
 		}
-		post{
+		/*post{
 		success{
 			slackNotify 'Nexus SUCCESS'
 		}
 	    	failure{
 			jira 'NEXUS STAGE FAILED','FRI-4'
 		}
-	    }
+	    }*/
 	}
 	
 	stage ('Dev Environment')
@@ -66,18 +66,17 @@ pipeline {
 		steps{
 			devEnv()
 		}
-		post{
+		/*post{
 		success{
 			slackNotify 'Dev Deploy SUCCESS'
 		}
 	    	failure{
 			jira 'DEV DEPLOY STAGE FAILED','FRI-5'
-		}
+		}*/
 	    }
 	
 	}
-	*/
-	stage('Functional Testing'){
+	/*stage('Functional Testing'){
 		steps{
 			funcTest()
 		}
@@ -89,24 +88,24 @@ pipeline {
 			jira 'SECURITY SCAN STAGE FAILED','FRI-6'
 		}
 	    }
-	}
-	/*	   
+	}*/
+		   
 	stage ('Test Environment')
 	{
 		steps{
 			testEnv()
 			approval()
 		}
-		post{
+		/*post{
 		success{
 			slackNotify 'Test Deploy SUCCESS'
 		}
 	    	failure{
 			jira 'TEST DEPLOY STAGE FAILED','FRI-7'
 		}
-	    }
+	    }*/
 	}
-	stage('Performance Testing')
+	/*stage('Performance Testing')
 	{
 		steps
 		{
@@ -120,36 +119,36 @@ pipeline {
 			jira 'PERFORMANCE TESTING DEPLOY STAGE FAILED','FRI-8'
 		}
 	    }
-	}
+	}*/
 	stage ('Performance Environment')
 	{
 		steps{
 			perfEnv()
 			approval()
 		}
-		post{
+		/*post{
 		success{
 			slackNotify 'Performance Deploy SUCCESS'
 		}
 	    	failure{
 			jira 'PERFORMANCE DEPLOY STAGE FAILED','FRI-9'
 		}
-	    }
+	    }*/
 	}
 	stage ('Production Environment')
 	{
 		steps{
 			prodEnv()
 		}
-		post{
+		/*post{
 			success{
 				slackNotify 'Production Deploy SUCCESS'
 			}
 	    		failure{
 				jira 'PRODUCTION DEPLOY STAGE FAILED','FRI-10'
 			}
-	    	}
+	    	}*/
 	}
-	*/
+
       }
 }
